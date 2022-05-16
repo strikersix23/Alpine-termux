@@ -12,7 +12,7 @@ Recommended to use SSH or external keyboard to execute the following commands un
 * Download Alpine Linux 3.15.4 (virt optimized) ISO
 	```
 	mkdir alpine && cd alpine
-	https://dl-cdn.alpinelinux.org/alpine/v3.15/releases/x86_64/alpine-virt-3.15.4-x86_64.iso
+	wget https://dl-cdn.alpinelinux.org/alpine/v3.15/releases/x86_64/alpine-virt-3.15.4-x86_64.iso
 	```
 
 * Create disk (note it won't actually take 16GB of space, more like 500MB)
