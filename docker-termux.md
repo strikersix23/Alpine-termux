@@ -53,7 +53,7 @@ qemu-system-aarch64 -machine virt -m 1024 -smp cpus=2 \
 * Create an answerfile to speed up installation:
 
   ```
-  localhost:~# wget 
+  localhost:~# wget https://raw.githubusercontent.com/strikersix23/Alpine-termux/main/answerfile
   ```
 
 * Patch `setup-disk` to enable serial console output on boot
