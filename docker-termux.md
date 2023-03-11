@@ -49,12 +49,11 @@ qemu-system-aarch64 -machine virt -m 1024 -smp cpus=2 \
 	Do you want to do any manual network configuration? [no] 
 	localhost:~# ifup eth0
 	```
-* fix the nameserver to connect to wifi
+ fix the nameserver to connect to wifi
   
-  ```
-  echo "nameserver 192.168.1.1
+   echo "nameserver 192.168.1.1
 nameserver 1.1.1.1" > /etc/resolv.conf
-  ```
+ 
 
 * Create an answerfile to speed up installation:
 
