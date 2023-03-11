@@ -9,23 +9,23 @@ Recommended to use SSH or external keyboard to execute the following commands un
 	pkg install qemu-utils qemu-common qemu-system-x86_64-headless
 	```
 
-* Download Alpine Linux 3.15.4 (virt optimized) ISO
+* Download Alpine Linux 3.17.2 (virt optimized) ISO
 	```
 	mkdir alpine && cd alpine
-	wget https://dl-cdn.alpinelinux.org/alpine/v3.15/releases/x86_64/alpine-virt-3.15.4-x86_64.iso
+	wget https://dl-cdn.alpinelinux.org/alpine/v3.17/releases/x86_64/alpine-virt-3.17.2-x86_64.iso
 	```
+  
 
 * Create disk (note it won't actually take 16GB of space, more like 500MB)
 	```
 	qemu-img create -f qcow2 alpine.img 16G
-	```
-
+        ```
 * Boot it up
   ```
   qemu-system-x86_64 -machine q35 -m 1024 -smp cpus=2 -cpu qemu64 \
     -drive if=pflash,format=raw,read-only,file=$PREFIX/share/qemu/edk2-x86_64-code.fd \
     -netdev user,id=n1,hostfwd=tcp::2222-:22 -device virtio-net,netdev=n1 \
-    -cdrom alpine-virt-3.15.4-x86_64.iso \
+    -cdrom  alpine-virt-3.17.2-x86_64.iso \
     -nographic alpine.img
   ```
 
@@ -35,7 +35,7 @@ Recommended to use SSH or external keyboard to execute the following commands un
 qemu-system-aarch64 -machine virt -m 1024 -smp cpus=2 \
   -cpu cortex-a57 -bios QEMU_EFI.fd \
   -netdev user,id=n1 -device virtio-net,netdev=n1 \
-  -cdrom alpine-virt-3.12.0-aarch64.iso \
+  -cdrom alpine-virt-3.17.2-aarch64.iso \
   -nographic alpine.img
 ``` -->
 
