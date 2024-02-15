@@ -12,7 +12,7 @@ Recommended to use SSH or external keyboard to execute the following commands un
 * Download Alpine Linux 3.17.2 (virt optimized) ISO
 	```
 	mkdir alpine && cd alpine
-	wget https://dl-cdn.alpinelinux.org/alpine/v3.17/releases/x86_64/alpine-virt-3.17.2-x86_64.iso
+	wget https://dl-cdn.alpinelinux.org/alpine/v3.19/releases/x86_64/alpine-virt-3.19.1-x86_64.iso
 	```
   
 
@@ -25,7 +25,7 @@ Recommended to use SSH or external keyboard to execute the following commands un
   qemu-system-x86_64 -machine q35 -m 1024 -smp cpus=2 -cpu qemu64 \
     -drive if=pflash,format=raw,read-only,file=$PREFIX/share/qemu/edk2-x86_64-code.fd \
     -netdev user,id=n1,hostfwd=tcp::2222-:22 -device virtio-net,netdev=n1 \
-    -cdrom  alpine-virt-3.17.2-x86_64.iso \
+    -cdrom  alpine-virt-3.19.1-x86_64.iso \
     -nographic alpine.img
   ```
 
